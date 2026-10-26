@@ -1,0 +1,586 @@
+{
+ "n_rows": 862,
+ "n_episodes": 487,
+ "start_min": "2022-01-05",
+ "start_max": "2026-08-31",
+ "n_countries": 137,
+ "n_unknown_country_rows": 10,
+ "top_countries": {
+  "IQ": 173,
+  "IR": 78,
+  "SY": 58,
+  "SD": 31,
+  "UA": 31,
+  "US": 28,
+  "PK": 22,
+  "SN": 22,
+  "DZ": 21,
+  "CU": 20
+ },
+ "iraq_rows": 173,
+ "iraq_share": 0.20069605568445475,
+ "top3_share": 0.35846867749419953,
+ "rows_in_multi_episodes": 441,
+ "share_in_multi_episodes": 0.511600928074246,
+ "largest_episode": 48,
+ "dur_min": 0.3333333333333333,
+ "dur_q1": 2.0125,
+ "dur_median": 4.0,
+ "dur_q3": 12.99986111111111,
+ "dur_max": 8199.998055555556,
+ "dur_mean": 72.55442543181232,
+ "n_over_30d": 21,
+ "n_flag_shared_end": 7,
+ "type_counts": {
+  "NATIONWIDE": 472,
+  "NETWORK_OR_PLATFORM": 277,
+  "REGIONAL": 113
+ },
+ "cause_table": [
+  {
+   "cause_group": "GOVERNMENT_DIRECTED",
+   "rows": 424,
+   "episodes": 77,
+   "median_h": 3.5,
+   "mean_h": 35.8
+  },
+  {
+   "cause_group": "CABLE_CUT",
+   "rows": 107,
+   "episodes": 98,
+   "median_h": 7.25,
+   "mean_h": 60.2
+  },
+  {
+   "cause_group": "POWER_OUTAGE",
+   "rows": 107,
+   "episodes": 100,
+   "median_h": 8.5,
+   "mean_h": 189.21
+  },
+  {
+   "cause_group": "TECHNICAL_PROBLEM",
+   "rows": 53,
+   "episodes": 51,
+   "median_h": 3.01,
+   "mean_h": 7.19
+  },
+  {
+   "cause_group": "UNKNOWN",
+   "rows": 53,
+   "episodes": 52,
+   "median_h": 2.75,
+   "mean_h": 3.93
+  },
+  {
+   "cause_group": "WEATHER_NATURAL",
+   "rows": 43,
+   "episodes": 42,
+   "median_h": 90.5,
+   "mean_h": 270.28
+  },
+  {
+   "cause_group": "MILITARY_ACTION",
+   "rows": 25,
+   "episodes": 21,
+   "median_h": 18.75,
+   "mean_h": 299.65
+  },
+  {
+   "cause_group": "MAINTENANCE",
+   "rows": 18,
+   "episodes": 17,
+   "median_h": 5.42,
+   "mean_h": 9.56
+  },
+  {
+   "cause_group": "CYBERATTACK",
+   "rows": 17,
+   "episodes": 17,
+   "median_h": 13.0,
+   "mean_h": 29.31
+  },
+  {
+   "cause_group": "OTHER",
+   "rows": 15,
+   "episodes": 12,
+   "median_h": 9.75,
+   "mean_h": 20.19
+  }
+ ],
+ "gov_rows": 424,
+ "gov_share": 0.4918793503480278,
+ "gov_iraq_rows": 171,
+ "gov_by_country": {
+  "IQ": 171,
+  "IR": 64,
+  "SY": 51,
+  "SD": 28,
+  "DZ": 20,
+  "SN": 20
+ },
+ "main": {
+  "A": {
+   "R2_mean": -0.06746381995831055,
+   "R2_sd": 0.026470792921353212,
+   "MAE_mean": 1.2790882115980446,
+   "MAE_sd": 0.02268370623866573,
+   "within2x_mean": 0.3161832946635731,
+   "within2x_sd": 0.01426526906580284,
+   "median_abs_err_h": 5.4472178231085095,
+   "R2_ci": [
+    -0.11957572985144815,
+    -0.04486903520536641
+   ],
+   "name": "Global mean (no predictors)"
+  },
+  "B": {
+   "R2_mean": 0.07427113119151763,
+   "R2_sd": 0.055120507820114385,
+   "MAE_mean": 1.1991129482639082,
+   "MAE_sd": 0.051499869314282395,
+   "within2x_mean": 0.3624709976798145,
+   "within2x_sd": 0.042086837836501606,
+   "median_abs_err_h": 5.930567155884129,
+   "R2_ci": [
+    -0.01389837084806155,
+    0.1475625037424581
+   ],
+   "name": "Cause only"
+  },
+  "C": {
+   "R2_mean": 0.06390490180212319,
+   "R2_sd": 0.05085591601683073,
+   "MAE_mean": 1.173370248692781,
+   "MAE_sd": 0.046603703074156316,
+   "within2x_mean": 0.3956496519721578,
+   "within2x_sd": 0.030357809939099874,
+   "median_abs_err_h": 5.056227317037225,
+   "R2_ci": [
+    -0.023844761075609573,
+    0.13785003615183597
+   ],
+   "name": "Cause + type"
+  },
+  "D": {
+   "R2_mean": 0.08053862718073827,
+   "R2_sd": 0.05465755494521318,
+   "MAE_mean": 1.2035141588661273,
+   "MAE_sd": 0.041022725689684174,
+   "within2x_mean": 0.33718097447795825,
+   "within2x_sd": 0.02173033912807398,
+   "median_abs_err_h": 5.552631850881863,
+   "R2_ci": [
+    -0.003398601385440025,
+    0.1475033119948418
+   ],
+   "name": "Cause + type + scope (full linear model)"
+  },
+  "E": {
+   "R2_mean": 0.22926712212697103,
+   "R2_sd": 0.038434558639518154,
+   "MAE_mean": 1.0473109155652895,
+   "MAE_sd": 0.025531290490277712,
+   "within2x_mean": 0.4489559164733179,
+   "within2x_sd": 0.037172545966090494,
+   "median_abs_err_h": 3.895236213058537,
+   "R2_ci": [
+    0.14314500726813012,
+    0.2997177186320507
+   ],
+   "name": "Full model + description flags (exploratory)"
+  },
+  "GB": {
+   "R2_mean": -0.09437115779600198,
+   "R2_sd": 0.17666759847235416,
+   "MAE_mean": 1.2726986217859284,
+   "MAE_sd": 0.0788031108594875,
+   "within2x_mean": 0.36908352668213457,
+   "within2x_sd": 0.02655380427894438,
+   "median_abs_err_h": 6.906872026764593,
+   "R2_ci": [
+    -0.36949906310247604,
+    0.09302955906285292
+   ],
+   "name": "Gradient boosting (same predictors as D)"
+  },
+  "RF": {
+   "R2_mean": 0.08287417871587983,
+   "R2_sd": 0.05475507265197821,
+   "MAE_mean": 1.2169532324009007,
+   "MAE_sd": 0.058497560426003035,
+   "within2x_mean": 0.30417633410672856,
+   "within2x_sd": 0.04263383641191235,
+   "median_abs_err_h": 6.328640257883528,
+   "R2_ci": [
+    -0.026108000645517545,
+    0.16682304306031157
+   ],
+   "name": "Random forest (same predictors as D)"
+  }
+ },
+ "random_row": {
+  "A": {
+   "R2_mean": -0.0021449336721275024,
+   "R2_sd": 0.0015057640450689327,
+   "MAE_mean": 1.2157066974575739,
+   "MAE_sd": 0.001144311436929612,
+   "within2x_mean": 0.3629930394431554,
+   "within2x_sd": 0.005949960184982971,
+   "median_abs_err_h": 4.851103748109,
+   "R2_ci": [
+    -0.02443805525414511,
+    -0.0020088640252555945
+   ]
+  },
+  "B": {
+   "R2_mean": 0.18334461301966837,
+   "R2_sd": 0.00716906565051814,
+   "MAE_mean": 1.0820936459233288,
+   "MAE_sd": 0.004658630289655627,
+   "within2x_mean": 0.4140371229698376,
+   "within2x_sd": 0.004189542348775758,
+   "median_abs_err_h": 3.5120235431443825,
+   "R2_ci": [
+    0.09707927908198401,
+    0.24871480909225283
+   ]
+  },
+  "D": {
+   "R2_mean": 0.2571351013387184,
+   "R2_sd": 0.009129274487425367,
+   "MAE_mean": 0.9983961201409712,
+   "MAE_sd": 0.006418944140629361,
+   "within2x_mean": 0.5158352668213456,
+   "within2x_sd": 0.00591862789671247,
+   "median_abs_err_h": 3.6624806100346037,
+   "R2_ci": [
+    0.16208080972736866,
+    0.33437733284920135
+   ]
+  },
+  "GB": {
+   "R2_mean": 0.3277083066592491,
+   "R2_sd": 0.018981104860694577,
+   "MAE_mean": 0.9142653126594711,
+   "MAE_sd": 0.00983514795459045,
+   "within2x_mean": 0.5410672853828306,
+   "within2x_sd": 0.005069318436296459,
+   "median_abs_err_h": 3.635544244284546,
+   "R2_ci": [
+    0.23706568893995442,
+    0.4079998148813926
+   ]
+  }
+ },
+ "iraq_heldout": {
+  "A": {
+   "MAE": 1.485509029760064,
+   "within2x": 0.0,
+   "median_pred_h": 9.377141981073047,
+   "median_true_h": 2.0
+  },
+  "D": {
+   "MAE": 1.274310308196743,
+   "within2x": 0.1907514450867052,
+   "median_pred_h": 7.493816490584254,
+   "median_true_h": 2.0
+  }
+ },
+ "no_iraq_R2": {
+  "A": [
+   -0.01565610070806458,
+   0.00976621020254561
+  ],
+  "B": [
+   0.11480602646115742,
+   0.028008940332861058
+  ],
+  "D": [
+   0.07629029076553366,
+   0.043755283881849114
+  ]
+ },
+ "no_iraq_rows": 689,
+ "by_cause": [
+  {
+   "cause": "UNKNOWN",
+   "rows": 53,
+   "episodes": 52,
+   "median_h": 2.75,
+   "MAE_full": 0.7356919739645472,
+   "ci_lo": 0.6021277859686228,
+   "ci_hi": 0.891057901628175,
+   "MAE_causeonly": 0.7892450032204997,
+   "MAE_globalmean": 1.1163235566539327,
+   "within2x": 0.5471698113207547,
+   "typical_factor": 2.0869255911561115
+  },
+  {
+   "cause": "MAINTENANCE",
+   "rows": 18,
+   "episodes": 17,
+   "median_h": 5.417222222222222,
+   "MAE_full": 0.816119401765163,
+   "ci_lo": 0.4488552795449843,
+   "ci_hi": 1.1952367952579332,
+   "MAE_causeonly": 0.9258438878049975,
+   "MAE_globalmean": 0.8663454304277031,
+   "within2x": 0.5,
+   "typical_factor": 2.261706013555126
+  },
+  {
+   "cause": "TECHNICAL_PROBLEM",
+   "rows": 53,
+   "episodes": 51,
+   "median_h": 3.013611111111111,
+   "MAE_full": 0.9026421564442992,
+   "ci_lo": 0.735812503189839,
+   "ci_hi": 1.0750181526431424,
+   "MAE_causeonly": 0.8875549975058163,
+   "MAE_globalmean": 1.0030353551254507,
+   "within2x": 0.4339622641509434,
+   "typical_factor": 2.466110360166878
+  },
+  {
+   "cause": "GOVERNMENT_DIRECTED",
+   "rows": 424,
+   "episodes": 77,
+   "median_h": 3.5,
+   "MAE_full": 1.1296040197105022,
+   "ci_lo": 0.91582059727445,
+   "ci_hi": 1.352902185154316,
+   "MAE_causeonly": 1.1831530594885227,
+   "MAE_globalmean": 1.2073504905656558,
+   "within2x": 0.33254716981132076,
+   "typical_factor": 3.0944309238356476
+  },
+  {
+   "cause": "POWER_OUTAGE",
+   "rows": 107,
+   "episodes": 100,
+   "median_h": 8.5,
+   "MAE_full": 1.1740166948575128,
+   "ci_lo": 0.9454135529065864,
+   "ci_hi": 1.4552438607229228,
+   "MAE_causeonly": 1.0788992136371107,
+   "MAE_globalmean": 1.0445454967003092,
+   "within2x": 0.4205607476635514,
+   "typical_factor": 3.2349604261785947
+  },
+  {
+   "cause": "CABLE_CUT",
+   "rows": 107,
+   "episodes": 98,
+   "median_h": 7.25,
+   "MAE_full": 1.377119893322385,
+   "ci_lo": 1.188043215567323,
+   "ci_hi": 1.5660689017632161,
+   "MAE_causeonly": 1.3499369207510876,
+   "MAE_globalmean": 1.309462078325599,
+   "within2x": 0.29906542056074764,
+   "typical_factor": 3.963469956892112
+  },
+  {
+   "cause": "WEATHER_NATURAL",
+   "rows": 43,
+   "episodes": 42,
+   "median_h": 90.5,
+   "MAE_full": 1.5489737768618836,
+   "ci_lo": 1.2120542801176621,
+   "ci_hi": 1.8883135858531057,
+   "MAE_causeonly": 1.5329078100037878,
+   "MAE_globalmean": 2.5339343081147723,
+   "within2x": 0.3488372093023256,
+   "typical_factor": 4.7066376429309384
+  },
+  {
+   "cause": "CYBERATTACK",
+   "rows": 17,
+   "episodes": 17,
+   "median_h": 13.0,
+   "MAE_full": 1.5759009480505162,
+   "ci_lo": 1.1354644084278418,
+   "ci_hi": 2.028383315229683,
+   "MAE_causeonly": 1.5051945138613734,
+   "MAE_globalmean": 1.4715609338490285,
+   "within2x": 0.23529411764705882,
+   "typical_factor": 4.8350958265169215
+  },
+  {
+   "cause": "OTHER",
+   "rows": 15,
+   "episodes": 12,
+   "median_h": 9.75,
+   "MAE_full": 1.8107690205968652,
+   "ci_lo": 1.1740278678983977,
+   "ci_hi": 2.315663767141208,
+   "MAE_causeonly": 1.2394370087953168,
+   "MAE_globalmean": 1.1437157768165058,
+   "within2x": 0.06666666666666667,
+   "typical_factor": 6.1151482994622475
+  },
+  {
+   "cause": "MILITARY_ACTION",
+   "rows": 25,
+   "episodes": 21,
+   "median_h": 18.75,
+   "MAE_full": 1.9313721250125684,
+   "ci_lo": 1.3938012250321292,
+   "ci_hi": 2.4713716970041464,
+   "MAE_causeonly": 2.09151263848201,
+   "MAE_globalmean": 2.1953462161505066,
+   "within2x": 0.24,
+   "typical_factor": 6.898969999409099
+  }
+ ],
+ "MAE_global_all": 1.273469561229693,
+ "sensitivity": {
+  "All 862 records (main result)": [
+   0.08053862718073827,
+   0.05465755494521318
+  ],
+  "Each episode counted once (weights = 1/episode size)": [
+   0.11472216870166152,
+   0.053290276358930196
+  ],
+  "Excluding 7 long records with a shared end time": [
+   0.07732886742695441,
+   0.05973153843693232
+  ],
+  "Excluding all 21 records longer than 30 days": [
+   0.010759267840982911,
+   0.07044303510363549
+  ],
+  "Government-directed records only": [
+   -0.1497466185584891,
+   0.08859514369736064
+  ],
+  "Non-government records only": [
+   0.1331027386661261,
+   0.06154858334144666
+  ]
+ },
+ "E_sens": {
+  "gov_only": [
+   0.25965407006825786,
+   0.03756906883123799
+  ],
+  "non_gov": [
+   0.15236019682231383,
+   0.05589400057506763
+  ]
+ },
+ "exam_table": [
+  {
+   "says_exam": false,
+   "n": 185,
+   "median_h": 8.33,
+   "mean_h": 78.56,
+   "q1_h": 4.0,
+   "q3_h": 19.0,
+   "max_h": 3406.0
+  },
+  {
+   "says_exam": true,
+   "n": 239,
+   "median_h": 2.0,
+   "mean_h": 2.7,
+   "q1_h": 2.0,
+   "q3_h": 3.5,
+   "max_h": 10.0
+  }
+ ],
+ "gov_exam_share": 0.5636792452830188,
+ "gov_desc_missing_share": 0.24528301886792453,
+ "desc_missing_share_all": 0.24477958236658934,
+ "exam_by_country": {
+  "IQ": 164,
+  "SY": 47,
+  "DZ": 15,
+  "SD": 10,
+  "MR": 3
+ },
+ "exam_n_countries": 5,
+ "exam_nonexam_countries_nonexam": 27,
+ "coefs": [
+  {
+   "feature": "cause_group_CYBERATTACK",
+   "coef": -0.09291009292323628,
+   "multiplier": 0.9112754267229458
+  },
+  {
+   "feature": "cause_group_GOVERNMENT_DIRECTED",
+   "coef": -0.17880852600843322,
+   "multiplier": 0.8362660072587221
+  },
+  {
+   "feature": "cause_group_MAINTENANCE",
+   "coef": -0.7050632468293456,
+   "multiplier": 0.49407732444370367
+  },
+  {
+   "feature": "cause_group_MILITARY_ACTION",
+   "coef": 1.5356015286030005,
+   "multiplier": 4.644118259885322
+  },
+  {
+   "feature": "cause_group_OTHER",
+   "coef": -0.28747045416977396,
+   "multiplier": 0.7501587305060513
+  },
+  {
+   "feature": "cause_group_POWER_OUTAGE",
+   "coef": 0.05526048721607363,
+   "multiplier": 1.056815865847029
+  },
+  {
+   "feature": "cause_group_TECHNICAL_PROBLEM",
+   "coef": -0.9450581696020425,
+   "multiplier": 0.3886569622233669
+  },
+  {
+   "feature": "cause_group_UNKNOWN",
+   "coef": -1.3882118381281043,
+   "multiplier": 0.24952109004409603
+  },
+  {
+   "feature": "cause_group_WEATHER_NATURAL",
+   "coef": 1.930485451839143,
+   "multiplier": 6.892855578933251
+  },
+  {
+   "feature": "type_group_NETWORK_OR_PLATFORM",
+   "coef": 0.6294656324371376,
+   "multiplier": 1.876607513101976
+  },
+  {
+   "feature": "type_group_REGIONAL",
+   "coef": -0.3785414134786929,
+   "multiplier": 0.6848596080489892
+  },
+  {
+   "feature": "n_asns",
+   "coef": -0.13729102982050836,
+   "multiplier": 0.87171649371735
+  },
+  {
+   "feature": "n_locations",
+   "coef": 0.26973274790369706,
+   "multiplier": 1.3096144067647821
+  },
+  {
+   "feature": "n_countries",
+   "coef": -0.5491495731439333,
+   "multiplier": 0.5774406726854966
+  },
+  {
+   "feature": "has_asn_record",
+   "coef": -0.6336371539782444,
+   "multiplier": 0.5306582011509032
+  }
+ ],
+ "intercept": 2.8625009908273094,
+ "intercept_h": 17.50525271136813,
+ "in_sample_R2_D": 0.297235852407148
+}

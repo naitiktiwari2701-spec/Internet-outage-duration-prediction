@@ -1,0 +1,18 @@
+Start: 866 raw rows
+Dropped 4 rows with missing cause/type label (ids [28, 29, 30, 31])
+Rows with no resolvable country: 10
+cause_group counts:
+cause_group
+GOVERNMENT_DIRECTED    424
+POWER_OUTAGE           107
+CABLE_CUT              107
+TECHNICAL_PROBLEM       53
+UNKNOWN                 53
+WEATHER_NATURAL         43
+MILITARY_ACTION         25
+MAINTENANCE             18
+CYBERATTACK             17
+OTHER                   15
+Episodes: 487 from 862 rows; largest = 48 rows; rows in multi-row episodes: 441
+Long (>30d): 21; long AND sharing an identical end timestamp (likely administrative close-out): 7
+Final: 862 event rows, 487 episodes

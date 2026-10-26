@@ -1,0 +1,54 @@
+{
+ "n_rows": 862,
+ "n_episodes": 487,
+ "start_min": "2022-01-05",
+ "start_max": "2026-08-31",
+ "n_countries": 137,
+ "top_countries": {
+  "IQ": 173,
+  "IR": 78,
+  "SY": 58,
+  "SD": 31,
+  "UA": 31,
+  "US": 28,
+  "PK": 22,
+  "SN": 22,
+  "DZ": 21,
+  "CU": 20
+ },
+ "iraq_share": 0.20069605568445475,
+ "top3_share": 0.35846867749419953,
+ "share_in_multi_episodes": 0.511600928074246,
+ "dur_median": 4.0,
+ "dur_q1": 2.0125,
+ "dur_q3": 12.99986111111111,
+ "dur_mean": 72.55442543181232,
+ "dur_max": 8199.998055555556
+}
+A   Global mean (no predictors)                   R2=-0.067 sd=0.026 CI=(-0.120,-0.045) MAE=1.279 within2x=31.6% medErr=5.45h
+B   Cause only                                    R2=0.074 sd=0.055 CI=(-0.014,0.148) MAE=1.199 within2x=36.2% medErr=5.93h
+C   Cause + type                                  R2=0.064 sd=0.051 CI=(-0.024,0.138) MAE=1.173 within2x=39.6% medErr=5.06h
+D   Cause + type + scope (full linear model)      R2=0.081 sd=0.055 CI=(-0.003,0.148) MAE=1.204 within2x=33.7% medErr=5.55h
+E   Full model + description flags (exploratory)  R2=0.229 sd=0.038 CI=(0.143,0.300) MAE=1.047 within2x=44.9% medErr=3.90h
+GB  Gradient boosting (same predictors as D)      R2=-0.094 sd=0.177 CI=(-0.369,0.093) MAE=1.273 within2x=36.9% medErr=6.91h
+RF  Random forest (same predictors as D)          R2=0.083 sd=0.055 CI=(-0.026,0.167) MAE=1.217 within2x=30.4% medErr=6.33h
+random-row: {'A': (np.float64(-0.002), np.float64(0.002)), 'B': (np.float64(0.183), np.float64(0.007)), 'D': (np.float64(0.257), np.float64(0.009)), 'GB': (np.float64(0.328), np.float64(0.019))}
+Iraq held out: {'A': {'MAE': 1.485509029760064, 'within2x': 0.0, 'median_pred_h': 9.377141981073047, 'median_true_h': 2.0}, 'D': {'MAE': 1.274310308196743, 'within2x': 0.1907514450867052, 'median_pred_h': 7.493816490584254, 'median_true_h': 2.0}}
+No-Iraq R2: {'A': [-0.01565610070806458, 0.00976621020254561], 'B': [0.11480602646115742, 0.028008940332861058], 'D': [0.07629029076553366, 0.043755283881849114]} 689
+sensitivity: {'All 862 records (main result)': [0.081, 0.055], 'Each episode counted once (weights = 1/episode size)': [0.115, 0.053], 'Excluding 7 long records with a shared end time': [0.077, 0.06], 'Excluding all 21 records longer than 30 days': [0.011, 0.07], 'Government-directed records only': [-0.15, 0.089], 'Non-government records only': [0.133, 0.062]} {'gov_only': [0.25965407006825786, 0.03756906883123799], 'non_gov': [0.15236019682231383, 0.05589400057506763]}
+             n  median_h  mean_h  q1_h  q3_h   max_h
+says_exam                                           
+False      185      8.33   78.56   4.0  19.0  3406.0
+True       239      2.00    2.70   2.0   3.5    10.0
+exam share of gov 0.5636792452830188 missing 0.24528301886792453 {'IQ': 164, 'SY': 47, 'DZ': 15, 'SD': 10, 'MR': 3} 5
+              cause  rows  episodes  median_h  MAE_full  ci_lo  ci_hi  MAE_causeonly  MAE_globalmean  within2x  typical_factor
+            UNKNOWN    53        52      2.75      0.74   0.60   0.89           0.79            1.12      0.55            2.09
+        MAINTENANCE    18        17      5.42      0.82   0.45   1.20           0.93            0.87      0.50            2.26
+  TECHNICAL_PROBLEM    53        51      3.01      0.90   0.74   1.08           0.89            1.00      0.43            2.47
+GOVERNMENT_DIRECTED   424        77      3.50      1.13   0.92   1.35           1.18            1.21      0.33            3.09
+       POWER_OUTAGE   107       100      8.50      1.17   0.95   1.46           1.08            1.04      0.42            3.23
+          CABLE_CUT   107        98      7.25      1.38   1.19   1.57           1.35            1.31      0.30            3.96
+    WEATHER_NATURAL    43        42     90.50      1.55   1.21   1.89           1.53            2.53      0.35            4.71
+        CYBERATTACK    17        17     13.00      1.58   1.14   2.03           1.51            1.47      0.24            4.84
+              OTHER    15        12      9.75      1.81   1.17   2.32           1.24            1.14      0.07            6.12
+    MILITARY_ACTION    25        21     18.75      1.93   1.39   2.47           2.09            2.20      0.24            6.90
